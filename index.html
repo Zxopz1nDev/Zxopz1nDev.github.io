@@ -1,0 +1,165 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Zxopz1n | Roblox Animator</title>
+  <style>
+    :root {
+      --bg: #070a10;
+      --panel: #111623;
+      --text: #e7ecf8;
+      --muted: #8ba1c1;
+      --accent: #55a9ff;
+      --accent2: #46d1ff;
+      --border: rgba(99, 117, 152, 0.2);
+      --shadow: 0 14px 30px rgba(8, 12, 20, 0.45);
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: Inter, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      color: var(--text);
+      background: radial-gradient(circle at top, #131b2d 0%, var(--bg) 62%);
+      line-height: 1.5;
+      letter-spacing: 0.01em;
+    }
+    .wrap { width: min(1180px, 94vw); margin: 0 auto; padding: 3rem 0 4rem; }
+    .section { margin-bottom: 3.5rem; padding: 1.2rem 1.4rem; border: 1px solid var(--border); border-radius: 16px; background: linear-gradient(180deg, rgba(22,32,50,.58), rgba(10,15,23,.76)); box-shadow: var(--shadow); }
+    .panel-title { font-size: clamp(1.2rem, 2vw, 1.35rem); color: var(--muted); margin: 0 0 .75rem; text-transform: uppercase; letter-spacing: .16em; }
+    h1 { margin: 0; font-size: clamp(2rem, 5vw, 3rem); }
+    h2 { margin: .2rem 0 1rem; font-size: clamp(1.4rem, 2.2vw, 1.75rem); }
+    p { margin: .6rem 0; }
+    .subtext { color: var(--muted); }
+    .hero { display: grid; gap: 1rem; }
+    .hero-grid { margin-top: .85rem; display: flex; flex-wrap: wrap; gap: .75rem; }
+    .btn { display: inline-flex; align-items: center; justify-content: center; background: linear-gradient(120deg, var(--accent), var(--accent2)); color: #fff; border: none; padding: .72rem 1.16rem; border-radius: 999px; text-decoration: none; font-size: 0.96rem; font-weight: 600; transition: transform .2s ease, box-shadow .2s ease; box-shadow: 0 8px 20px rgba(42, 154, 255, .4); }
+    .btn:hover { transform: translateY(-2px) scale(1.01); box-shadow: 0 14px 26px rgba(42, 154, 255, .52); }
+    .grid { display: grid; gap: 1rem; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); }
+    .video-card { position: relative; overflow: hidden; border-radius: 12px; border: 1px solid rgba(142, 161, 188, .2); background: rgba(14, 20, 33, .75); box-shadow: inset 0 0 0 1px rgba(148, 167, 205, .08), 0 10px 25px rgba(0,0,0,.33); }
+    .video-card.bigger { grid-column: span 2; }
+    .video-card video, .video-card iframe { width: 100%; height: 100%; object-fit: cover; aspect-ratio: 16 / 9; display: block; border: 0; transition: transform .4s ease, filter .4s ease; }
+    .video-card:hover video, .video-card:hover iframe { transform: scale(1.04); filter: brightness(1.1) saturate(1.05); }
+    .video-title { position: absolute; bottom: 0; width: 100%; text-align: left; padding: .64rem .75rem; background: linear-gradient(180deg, transparent 0%, rgba(10, 14, 23, .85) 90%); color: #fff; font-size: .85rem; letter-spacing:.01em; }
+    .list-compact { padding-left: 1.1rem; margin-top: .4rem; }
+    .list-compact li { margin-bottom: .35rem; color: var(--text); }
+    .split { display:flex; gap:1.2rem; flex-wrap:wrap; }
+    .card { flex:1; min-width:232px; padding:.9rem 1rem; background:rgba(9,13,22,.9); border:1px solid rgba(99, 117, 152, .25); border-radius: 12px; }
+    @media (max-width: 880px) {
+      .section { padding: 1rem; }
+      .btn { width: 100%; justify-content: center; }
+      .video-card.bigger { grid-column: unset; }
+      .hero { display: block; }
+    }
+  </style>
+</head>
+<body>
+  <main class="wrap">
+    <section class="section hero" id="home">
+      <p class="panel-title">Roblox Animator Portfolio</p>
+      <h1>Zxopz1n</h1>
+      <h2 class="subtext">Roblox Animator (Combat / Gameplay Animations)</h2>
+      <p>High-quality, smooth and responsive animations for Roblox games. Commissions are open.</p>
+      <a href="#contact" class="btn">Contact Me</a>
+    </section>
+
+    <section class="section" id="portfolio">
+      <p class="panel-title">Portfolio</p>
+      <h2>Featured Animations</h2>
+      <div class="grid">
+        <article class="video-card bigger">
+          <iframe src="https://streamable.com/e/0r2e57?autoplay=1&loop=1&muted=1&controls=0" allow="autoplay; fullscreen; encrypted-media" allowfullscreen loading="lazy"></iframe>
+          <div class="video-title">Front Dash (R6)</div>
+        </article>
+        <article class="video-card bigger">
+          <iframe src="https://streamable.com/e/vkqlwf?autoplay=1&loop=1&muted=1&controls=0" allow="autoplay; fullscreen; encrypted-media" allowfullscreen loading="lazy"></iframe>
+          <div class="video-title">Back Dash (R6)</div>
+        </article>
+        <article class="video-card">
+          <iframe src="https://streamable.com/e/udrbms?autoplay=1&loop=1&muted=1&controls=0" allow="autoplay; fullscreen; encrypted-media" allowfullscreen loading="lazy"></iframe>
+          <div class="video-title">Sharingan Cutscene (R6)</div>
+        </article>
+        <article class="video-card">
+          <iframe src="https://streamable.com/e/16vl9n?autoplay=1&loop=1&muted=1&controls=0" allow="autoplay; fullscreen; encrypted-media" allowfullscreen loading="lazy"></iframe>
+          <div class="video-title">Mahoraga Animation (Custom Rig)</div>
+        </article>
+        <article class="video-card">
+          <iframe src="https://streamable.com/e/ms0mmj?autoplay=1&loop=1&muted=1&controls=0" allow="autoplay; fullscreen; encrypted-media" allowfullscreen loading="lazy"></iframe>
+          <div class="video-title">Idle Animation (R6)</div>
+        </article>
+        <article class="video-card">
+          <iframe src="https://streamable.com/e/fdi8rw?autoplay=1&loop=1&muted=1&controls=0" allow="autoplay; fullscreen; encrypted-media" allowfullscreen loading="lazy"></iframe>
+          <div class="video-title">Idle Animation 2 (R6)</div>
+        </article>
+        <article class="video-card">
+          <iframe src="https://streamable.com/e/71s284?autoplay=1&loop=1&muted=1&controls=0" allow="autoplay; fullscreen; encrypted-media" allowfullscreen loading="lazy"></iframe>
+          <div class="video-title">Walk Animation (R6)</div>
+        </article>
+        <article class="video-card">
+          <iframe src="https://streamable.com/e/o1ghs7?autoplay=1&loop=1&muted=1&controls=0" allow="autoplay; fullscreen; encrypted-media" allowfullscreen loading="lazy"></iframe>
+          <div class="video-title">Emote Animation (R15)</div>
+        </article>
+        <article class="video-card">
+          <iframe src="https://streamable.com/e/xfx2nc?autoplay=1&loop=1&muted=1&controls=0" allow="autoplay; fullscreen; encrypted-media" allowfullscreen loading="lazy"></iframe>
+          <div class="video-title">Float Animation (R6)</div>
+        </article>
+        <article class="video-card">
+          <iframe src="https://streamable.com/e/3wq5dh?autoplay=1&loop=1&muted=1&controls=0" allow="autoplay; fullscreen; encrypted-media" allowfullscreen loading="lazy"></iframe>
+          <div class="video-title">Swimming Animation (R6)</div>
+        </article>
+        <article class="video-card">
+          <iframe src="https://streamable.com/e/05bw7u?autoplay=1&loop=1&muted=1&controls=0" allow="autoplay; fullscreen; encrypted-media" allowfullscreen loading="lazy"></iframe>
+          <div class="video-title">Death Animation (R6)</div>
+        </article>
+        <article class="video-card">
+          <iframe src="https://streamable.com/e/z512wx?autoplay=1&loop=1&muted=1&controls=0" allow="autoplay; fullscreen; encrypted-media" allowfullscreen loading="lazy"></iframe>
+          <div class="video-title">Run Animation (R6)</div>
+        </article>
+      </div>
+    </section>
+
+    <section class="section" id="pricing">
+      <p class="panel-title">Pricing</p>
+      <h2>Simple Commission Rates</h2>
+      <div class="card">
+        <p><strong>Starting Price:</strong> $10 USD / 1500 Robux</p>
+        <p class="subtext">Price may increase depending on animation complexity.</p>
+        <p><em>Final price depends on the difficulty and details of the animation.</em></p>
+      </div>
+    </section>
+
+    <section class="section" id="order">
+      <p class="panel-title">How to Order</p>
+      <h2>Send these details</h2>
+      <ul class="list-compact">
+        <li>Animation type</li>
+        <li>Reference (video/image REQUIRED)</li>
+        <li>Deadline (if any)</li>
+      </ul>
+    </section>
+
+    <section class="section" id="terms">
+      <p class="panel-title">Terms of Service</p>
+      <ul class="list-compact">
+        <li>Payment upfront</li>
+        <li>No refunds after work has started</li>
+        <li>Clear references are required</li>
+        <li>I may decline unclear requests</li>
+      </ul>
+    </section>
+
+    <section class="section" id="contact">
+      <p class="panel-title">Contact</p>
+      <h2>Let’s make your next Roblox animation great</h2>
+      <div class="split">
+        <div class="card"><strong>Email</strong><br><a href="mailto:zxopz1ndev@gmail.com" style="color: var(--accent); text-decoration: none;">zxopz1ndev@gmail.com</a></div>
+        <div class="card"><strong>Discord</strong><br><span style="color: var(--text);">ZX_opz1n#8504</span></div>
+        <div class="card"><strong>Twitter</strong><br><a href="https://x.com/ZOpz1n3342" target="_blank" rel="noopener" style="color: var(--accent); text-decoration: none;">@ZOpz1n3342</a></div>
+      </div>
+      <p style="margin-top:1rem; font-weight:600; color:#fff">Serious inquiries only.</p>
+    </section>
+
+  </main>
+</body>
+</html>
