@@ -6,14 +6,14 @@
   <title>Zxopz1n | Roblox Animator</title>
   <style>
     :root {
-      --bg: #070a10;
-      --panel: #111623;
-      --text: #e7ecf8;
-      --muted: #8ba1c1;
-      --accent: #55a9ff;
-      --accent2: #46d1ff;
-      --border: rgba(99, 117, 152, 0.2);
-      --shadow: 0 14px 30px rgba(8, 12, 20, 0.45);
+      --bg: #050506;
+      --panel: #0e0b14;
+      --text: #f2ecfb;
+      --muted: #a893c9;
+      --accent: #a83bff;
+      --accent2: #d86bff;
+      --border: rgba(168, 59, 255, 0.22);
+      --shadow: 0 14px 30px rgba(20, 5, 35, 0.55);
     }
     * { box-sizing: border-box; }
     html { scroll-behavior: smooth; }
@@ -21,31 +21,39 @@
       margin: 0;
       font-family: Inter, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
       color: var(--text);
-      background: radial-gradient(circle at top, #131b2d 0%, var(--bg) 62%);
+      background: radial-gradient(circle at top, #1a0b2e 0%, var(--bg) 62%);
       line-height: 1.5;
       letter-spacing: 0.01em;
     }
     .wrap { width: min(1180px, 94vw); margin: 0 auto; padding: 3rem 0 4rem; }
-    .section { margin-bottom: 3.5rem; padding: 1.2rem 1.4rem; border: 1px solid var(--border); border-radius: 16px; background: linear-gradient(180deg, rgba(22,32,50,.58), rgba(10,15,23,.76)); box-shadow: var(--shadow); }
+    .section { margin-bottom: 3.5rem; padding: 1.2rem 1.4rem; border: 1px solid var(--border); border-radius: 16px; background: linear-gradient(180deg, rgba(40, 15, 65,.45), rgba(10,7,14,.8)); box-shadow: var(--shadow); }
     .panel-title { font-size: clamp(1.2rem, 2vw, 1.35rem); color: var(--muted); margin: 0 0 .75rem; text-transform: uppercase; letter-spacing: .16em; }
-    h1 { margin: 0; font-size: clamp(2rem, 5vw, 3rem); }
+    h1 { margin: 0; font-size: clamp(2rem, 5vw, 3rem); color: #fff; text-shadow: 0 0 18px rgba(168, 59, 255, .55), 0 0 42px rgba(216, 107, 255, .3); }
     h2 { margin: .2rem 0 1rem; font-size: clamp(1.4rem, 2.2vw, 1.75rem); }
     p { margin: .6rem 0; }
     .subtext { color: var(--muted); }
-    .hero { display: grid; gap: 1rem; }
+    .hero { display: grid; grid-template-columns: minmax(0, 1.5fr) minmax(0, 1fr); gap: 1.5rem; align-items: center; }
+    .hero-contact p { margin: .35rem 0; }
+    .hero-contact .panel-title { margin-bottom: .4rem; }
     .hero-grid { margin-top: .85rem; display: flex; flex-wrap: wrap; gap: .75rem; }
-    .btn { display: inline-flex; align-items: center; justify-content: center; background: linear-gradient(120deg, var(--accent), var(--accent2)); color: #fff; border: none; padding: .72rem 1.16rem; border-radius: 999px; text-decoration: none; font-size: 0.96rem; font-weight: 600; transition: transform .2s ease, box-shadow .2s ease; box-shadow: 0 8px 20px rgba(42, 154, 255, .4); }
-    .btn:hover { transform: translateY(-2px) scale(1.01); box-shadow: 0 14px 26px rgba(42, 154, 255, .52); }
+    .btn { display: inline-flex; align-items: center; justify-content: center; background: linear-gradient(120deg, var(--accent), var(--accent2)); color: #fff; border: none; padding: .72rem 1.16rem; border-radius: 999px; text-decoration: none; font-size: 0.96rem; font-weight: 600; transition: transform .2s ease, box-shadow .2s ease; box-shadow: 0 8px 20px rgba(168, 59, 255, .45); }
+    .btn:hover { transform: translateY(-2px) scale(1.01); box-shadow: 0 14px 26px rgba(216, 107, 255, .55); }
     .grid { display: grid; gap: 1rem; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); }
-    .video-card { position: relative; overflow: hidden; border-radius: 12px; border: 1px solid rgba(142, 161, 188, .2); background: rgba(14, 20, 33, .75); box-shadow: inset 0 0 0 1px rgba(148, 167, 205, .08), 0 10px 25px rgba(0,0,0,.33); }
+    .filters { display: flex; flex-wrap: wrap; gap: .55rem; margin-bottom: 1.1rem; }
+    .filter-btn { background: rgba(12, 8, 18, .9); color: var(--muted); border: 1px solid var(--border); padding: .5rem 1rem; border-radius: 999px; font-size: .88rem; font-weight: 600; letter-spacing: .02em; cursor: pointer; transition: color .2s ease, border-color .2s ease, box-shadow .2s ease, transform .2s ease; }
+    .filter-btn:hover { color: var(--text); border-color: rgba(216, 107, 255, .5); }
+    .filter-btn.active { background: linear-gradient(120deg, var(--accent), var(--accent2)); color: #fff; border-color: transparent; box-shadow: 0 6px 18px rgba(168, 59, 255, .45); }
+    .filter-btn.active:hover { transform: translateY(-1px); }
+    .video-card.hidden { display: none; }
+    .video-card { position: relative; overflow: hidden; border-radius: 12px; border: 1px solid rgba(168, 59, 255, .22); background: rgba(14, 11, 20, .75); box-shadow: inset 0 0 0 1px rgba(216, 107, 255, .07), 0 10px 25px rgba(0,0,0,.4); }
     .video-card.bigger { grid-column: span 2; }
     .video-card video, .video-card iframe { width: 100%; height: 100%; object-fit: cover; aspect-ratio: 16 / 9; display: block; border: 0; transition: transform .4s ease, filter .4s ease; }
     .video-card:hover video, .video-card:hover iframe { transform: scale(1.04); filter: brightness(1.1) saturate(1.05); }
-    .video-title { position: absolute; bottom: 0; width: 100%; text-align: left; padding: .64rem .75rem; background: linear-gradient(180deg, transparent 0%, rgba(10, 14, 23, .85) 90%); color: #fff; font-size: .85rem; letter-spacing:.01em; }
+    .video-title { position: absolute; bottom: 0; width: 100%; text-align: left; padding: .64rem .75rem; background: linear-gradient(180deg, transparent 0%, rgba(12, 6, 20, .85) 90%); color: #fff; font-size: .85rem; letter-spacing:.01em; }
     .list-compact { padding-left: 1.1rem; margin-top: .4rem; }
     .list-compact li { margin-bottom: .35rem; color: var(--text); }
     .split { display:flex; gap:1.2rem; flex-wrap:wrap; }
-    .card { flex:1; min-width:232px; padding:.9rem 1rem; background:rgba(9,13,22,.9); border:1px solid rgba(99, 117, 152, .25); border-radius: 12px; }
+    .card { flex:1; min-width:232px; padding:.9rem 1rem; background:rgba(12,8,18,.9); border:1px solid rgba(168, 59, 255, .25); border-radius: 12px; }
     @media (max-width: 880px) {
       .section { padding: 1rem; }
       .btn { width: 100%; justify-content: center; }
@@ -57,96 +65,111 @@
 <body>
   <main class="wrap">
     <section class="section hero" id="home">
-      <p class="panel-title">Roblox Animator Portfolio</p>
-      <h1>Zxopz1n</h1>
-      <h2 class="subtext">Roblox Animator (Combat / Gameplay Animations)</h2>
-      <p>High-quality, smooth and responsive animations for Roblox games. Commissions are open.</p>
-      <a href="#contact" class="btn">Contact Me</a>
+      <div class="hero-left">
+        <p class="panel-title">Roblox Animator Portfolio</p>
+        <h1>Zxopz1n</h1>
+        <h2 class="subtext">Roblox Animator (Combat / Gameplay Animations)</h2>
+        <p>High-quality, smooth and responsive animations for Roblox games. Commissions are open.</p>
+        <a href="https://discord.com/users/869299340970176602" target="_blank" rel="noopener" class="btn">Contact Me</a>
+      </div>
+      <div class="hero-contact">
+        <p class="panel-title">Contact</p>
+        <p><strong>Email</strong><br><a href="mailto:zxopz1ndev@gmail.com" style="color: var(--accent); text-decoration: none;">zxopz1ndev@gmail.com</a></p>
+        <p><strong>Discord</strong><br><span style="color: var(--text);">ZX_opz1n#8504</span></p>
+      </div>
+    </section>
+
+    <section class="section" id="commission-info">
+      <p class="panel-title">Commission Info</p>
+      <div class="split">
+        <div class="card">
+          <strong>Terms of Service</strong>
+          <ul class="list-compact">
+            <li>Payment upfront</li>
+            <li>No refunds after work has started</li>
+            <li>Clear references are required</li>
+            <li>I may decline unclear requests</li>
+          </ul>
+        </div>
+        <div class="card">
+          <strong>Starting Price:</strong> $10 USD / 2500 Robux
+          <p class="subtext">Price may increase depending on animation complexity.</p>
+          <p><em>Final price depends on the difficulty and details of the animation.</em></p>
+        </div>
+        <div class="card">
+          <strong>How to Order — send these details</strong>
+          <ul class="list-compact">
+            <li>Animation type</li>
+            <li>Reference (video/image REQUIRED)</li>
+            <li>Deadline (if any)</li>
+          </ul>
+        </div>
+      </div>
     </section>
 
     <section class="section" id="portfolio">
       <p class="panel-title">Portfolio</p>
       <h2>Featured Animations</h2>
-      <div class="grid">
-        <article class="video-card bigger">
-          <iframe src="https://streamable.com/e/0r2e57?autoplay=1&loop=1&muted=1&controls=0" allow="autoplay; fullscreen; encrypted-media" allowfullscreen loading="lazy"></iframe>
-          <div class="video-title">Front Dash (R6)</div>
-        </article>
-        <article class="video-card bigger">
+      <div class="filters" id="filters">
+        <button class="filter-btn active" data-filter="all">All</button>
+        <button class="filter-btn" data-filter="r6">R6</button>
+        <button class="filter-btn" data-filter="r15">R15</button>
+        <button class="filter-btn" data-filter="custom">Custom Rig</button>
+      </div>
+      <div class="grid" id="video-grid">
+        <article class="video-card" data-cat="r6">
           <iframe src="https://streamable.com/e/vkqlwf?autoplay=1&loop=1&muted=1&controls=0" allow="autoplay; fullscreen; encrypted-media" allowfullscreen loading="lazy"></iframe>
           <div class="video-title">Back Dash (R6)</div>
         </article>
-        <article class="video-card">
+        <article class="video-card" data-cat="r6">
           <iframe src="https://streamable.com/e/udrbms?autoplay=1&loop=1&muted=1&controls=0" allow="autoplay; fullscreen; encrypted-media" allowfullscreen loading="lazy"></iframe>
           <div class="video-title">Sharingan Cutscene (R6)</div>
         </article>
-        <article class="video-card">
+        <article class="video-card" data-cat="custom">
           <iframe src="https://streamable.com/e/16vl9n?autoplay=1&loop=1&muted=1&controls=0" allow="autoplay; fullscreen; encrypted-media" allowfullscreen loading="lazy"></iframe>
           <div class="video-title">Mahoraga Animation (Custom Rig)</div>
         </article>
-        <article class="video-card">
+        <article class="video-card" data-cat="r6">
           <iframe src="https://streamable.com/e/ms0mmj?autoplay=1&loop=1&muted=1&controls=0" allow="autoplay; fullscreen; encrypted-media" allowfullscreen loading="lazy"></iframe>
           <div class="video-title">Idle Animation (R6)</div>
         </article>
-        <article class="video-card">
-          <iframe src="https://streamable.com/e/fdi8rw?autoplay=1&loop=1&muted=1&controls=0" allow="autoplay; fullscreen; encrypted-media" allowfullscreen loading="lazy"></iframe>
-          <div class="video-title">Idle Animation 2 (R6)</div>
+        <article class="video-card" data-cat="custom">
+          <iframe src="https://streamable.com/e/als6pu?autoplay=1&loop=1&muted=1&controls=0" allow="autoplay; fullscreen; encrypted-media" allowfullscreen loading="lazy"></iframe>
+          <div class="video-title">Monster Rig Walk</div>
         </article>
-        <article class="video-card">
+        <article class="video-card" data-cat="r6">
           <iframe src="https://streamable.com/e/71s284?autoplay=1&loop=1&muted=1&controls=0" allow="autoplay; fullscreen; encrypted-media" allowfullscreen loading="lazy"></iframe>
           <div class="video-title">Walk Animation (R6)</div>
         </article>
-        <article class="video-card">
+        <article class="video-card" data-cat="custom">
+          <iframe src="https://streamable.com/e/bkueqi?autoplay=1&loop=1&muted=1&controls=0" allow="autoplay; fullscreen; encrypted-media" allowfullscreen loading="lazy"></iframe>
+          <div class="video-title">Monster Rig Idle</div>
+        </article>
+        <article class="video-card" data-cat="r6">
+          <iframe src="https://streamable.com/e/8sl2fg?autoplay=1&loop=1&muted=1&controls=0" allow="autoplay; fullscreen; encrypted-media" allowfullscreen loading="lazy"></iframe>
+          <div class="video-title">Npc Idle Variant</div>
+        </article>
+        <article class="video-card" data-cat="r6">
+          <iframe src="https://streamable.com/e/47zgd3?autoplay=1&loop=1&muted=1&controls=0" allow="autoplay; fullscreen; encrypted-media" allowfullscreen loading="lazy"></iframe>
+          <div class="video-title">Rimuru Idle</div>
+        </article>
+        <article class="video-card" data-cat="r15">
           <iframe src="https://streamable.com/e/o1ghs7?autoplay=1&loop=1&muted=1&controls=0" allow="autoplay; fullscreen; encrypted-media" allowfullscreen loading="lazy"></iframe>
           <div class="video-title">Emote Animation (R15)</div>
         </article>
-        <article class="video-card">
+        <article class="video-card" data-cat="r6">
           <iframe src="https://streamable.com/e/xfx2nc?autoplay=1&loop=1&muted=1&controls=0" allow="autoplay; fullscreen; encrypted-media" allowfullscreen loading="lazy"></iframe>
           <div class="video-title">Float Animation (R6)</div>
         </article>
-        <article class="video-card">
+        <article class="video-card" data-cat="r6">
           <iframe src="https://streamable.com/e/3wq5dh?autoplay=1&loop=1&muted=1&controls=0" allow="autoplay; fullscreen; encrypted-media" allowfullscreen loading="lazy"></iframe>
           <div class="video-title">Swimming Animation (R6)</div>
         </article>
-        <article class="video-card">
-          <iframe src="https://streamable.com/e/05bw7u?autoplay=1&loop=1&muted=1&controls=0" allow="autoplay; fullscreen; encrypted-media" allowfullscreen loading="lazy"></iframe>
-          <div class="video-title">Death Animation (R6)</div>
-        </article>
-        <article class="video-card">
+        <article class="video-card" data-cat="r6">
           <iframe src="https://streamable.com/e/z512wx?autoplay=1&loop=1&muted=1&controls=0" allow="autoplay; fullscreen; encrypted-media" allowfullscreen loading="lazy"></iframe>
           <div class="video-title">Run Animation (R6)</div>
         </article>
       </div>
-    </section>
-
-    <section class="section" id="pricing">
-      <p class="panel-title">Pricing</p>
-      <h2>Simple Commission Rates</h2>
-      <div class="card">
-        <p><strong>Starting Price:</strong> $10 USD / 2500 Robux</p>
-        <p class="subtext">Price may increase depending on animation complexity.</p>
-        <p><em>Final price depends on the difficulty and details of the animation.</em></p>
-      </div>
-    </section>
-
-    <section class="section" id="order">
-      <p class="panel-title">How to Order</p>
-      <h2>Send these details</h2>
-      <ul class="list-compact">
-        <li>Animation type</li>
-        <li>Reference (video/image REQUIRED)</li>
-        <li>Deadline (if any)</li>
-      </ul>
-    </section>
-
-    <section class="section" id="terms">
-      <p class="panel-title">Terms of Service</p>
-      <ul class="list-compact">
-        <li>Payment upfront</li>
-        <li>No refunds after work has started</li>
-        <li>Clear references are required</li>
-        <li>I may decline unclear requests</li>
-      </ul>
     </section>
 
     <section class="section" id="contact">
@@ -155,11 +178,24 @@
       <div class="split">
         <div class="card"><strong>Email</strong><br><a href="mailto:zxopz1ndev@gmail.com" style="color: var(--accent); text-decoration: none;">zxopz1ndev@gmail.com</a></div>
         <div class="card"><strong>Discord</strong><br><span style="color: var(--text);">ZX_opz1n#8504</span></div>
-        <div class="card"><strong>Twitter</strong><br><a href="https://x.com/ZOpz1n3342" target="_blank" rel="noopener" style="color: var(--accent); text-decoration: none;">@ZOpz1n3342</a></div>
       </div>
       <p style="margin-top:1rem; font-weight:600; color:#fff">Serious inquiries only.</p>
     </section>
 
   </main>
+  <script>
+    const filterButtons = document.querySelectorAll('#filters .filter-btn');
+    const videoCards = document.querySelectorAll('#video-grid .video-card');
+
+    filterButtons.forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        const filter = btn.dataset.filter;
+        filterButtons.forEach(function (b) { b.classList.toggle('active', b === btn); });
+        videoCards.forEach(function (card) {
+          card.classList.toggle('hidden', filter !== 'all' && card.dataset.cat !== filter);
+        });
+      });
+    });
+  </script>
 </body>
 </html>
